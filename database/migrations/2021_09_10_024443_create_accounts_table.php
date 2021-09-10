@@ -17,9 +17,9 @@ class CreateAccountsTable extends Migration
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';
             $table->id();
-            $table->string('code');
-            $table->string('name');
-            $table->float('amount', 8, 2)->nullable();
+            $table->string('code')->comment('เลขที่บัญชี');
+            $table->string('name')->comment('ชื่อบัญชี');
+            $table->float('amount', 8, 2)->nullable()->comment('ยอดคงเหลือ');
             $table->timestamps();
         });
     }

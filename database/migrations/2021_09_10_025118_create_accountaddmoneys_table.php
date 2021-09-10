@@ -19,8 +19,8 @@ class CreateAccountaddmoneysTable extends Migration
             $table->id();
             $table->string('code_add')->comment('รหัสอ้างอิง');
             $table->string('payment')->comment('ช่องทาง');
-            $table->bigInteger('accounts_id')->unsigned();
-            $table->float('amount', 8, 2)->nullable();
+            $table->bigInteger('accounts_id')->unsigned()->comment('ชื่อบัญชี');
+            $table->float('amount', 8, 2)->nullable()->comment('จำนวนเงิน');
             $table->timestamps();
             $table->foreign('accounts_id')->references('id')->on('accounts')->onDelete('cascade');
         });
